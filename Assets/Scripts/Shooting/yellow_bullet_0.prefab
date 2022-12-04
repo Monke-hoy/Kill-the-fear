@@ -99,9 +99,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f247a4c6ce0d6e54aabc739365db74f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gun: {fileID: 0}
   collider: {fileID: 5010001527924140046}
   bulletSpeed: 10
   damage: 34
+  GunRange:
+  - -0.5
+  - 0.5
 --- !u!61 &5010001527924140046
 BoxCollider2D:
   m_ObjectHideFlags: 0

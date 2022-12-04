@@ -7,13 +7,14 @@ using UnityEngine.Tilemaps;
 
 public class Bullet : MonoBehaviour
 {
+
+    public Gun gun;
  
     public BoxCollider2D collider;
 
     private RaycastHit2D HitTheWall;
 
     private float DeathTime;
-
 
     Rigidbody2D rb2d;
 
@@ -28,13 +29,18 @@ public class Bullet : MonoBehaviour
     public float bulletSpeed = 10f;
     public int damage = 10;
 
+    public float[] GunRange;
+
     void Awake()
     {
+        float bulletRange = Random.Range(GunRange[0], GunRange[1]);
+
         rb2d = GetComponent<Rigidbody2D>();
-        rb2d.velocity = new Vector2(bulletSpeed * rb2d.transform.right.x, bulletSpeed * rb2d.transform.right.y);
+        rb2d.velocity = new Vector2(bulletSpeed * rb2d.transform.right.x + bulletRange, bulletSpeed * rb2d.transform.right.y + bulletRange);
         Warrior = GameObject.FindWithTag("Player");
         UserGun = Warrior.GetComponent<Gun>();
         correction = Warrior.GetComponent<WarriorMovement>();
+        gun = Warrior.GetComponent<Gun>();
     }
 
     private void Update()
@@ -43,9 +49,9 @@ public class Bullet : MonoBehaviour
         LifeTimer += Time.deltaTime;
         if (LifeTimer >= LifeTime) { Destroy(gameObject); LifeTimer = 0; }
 
-        float CastAngle = Mathf.Atan2(rb2d.transform.right.y, rb2d.transform.right.x) * Mathf.Rad2Deg + correction.angleDifference;
+        float CastAngle = Mathf.Atan2(rb2d.transform.right.y, rb2d.transform.right.x) * Mathf.Rad2Deg + gun.angleDifference;
 
-        HitTheWall = Physics2D.Raycast(rb2d.position, rb2d.transform.right, collider.size.x, LayerMask.GetMask("Bullet", "Creatures"));
+        HitTheWall = Physics2D.Raycast(rb2d.position, rb2d.transform.right, collider.size.x, LayerMask.GetMask("Bullets", "Creatures"));
 
         
         
@@ -70,7 +76,11 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider)
     {
         Enemy enemy = collider.GetComponent<Enemy>();
-        if (enemy != null) { enemy.TakeDamage(damage); Destroy(gameObject, DeathTime); }
+        if ( (enemy != null)  ) 
+        { 
+            if (enemy.enemyIsKillable) { enemy.TakeDamage(damage); }
+            Destroy(gameObject, DeathTime);
+        }
     }
 
 

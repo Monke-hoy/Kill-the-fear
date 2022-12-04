@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1570f560c59b20e488bb09d6ca14f414
+guid: c3d27b599c85df34e88237ea43ac2131
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -107,22 +107,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayerWithRifle_0
+      name: PlayerWithShotGun_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 1
         y: 3
-        width: 27
-        height: 25
+        width: 26
+        height: 26
       alignment: 9
-      pivot: {x: 0.37037036, y: 0.6}
+      pivot: {x: 0.42307693, y: 0.5769231}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb1828394eb6daf4dab959fc492750e6
-      internalID: 1985933983
+      spriteID: 0c8da9a4a0a404449a4c84c67711b6b2
+      internalID: -1213236968
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PlayerWithRifle_0: 1985933983
+      PlayerWithShotGun_0: -1213236968
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

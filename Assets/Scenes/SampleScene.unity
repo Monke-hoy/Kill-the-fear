@@ -168,6 +168,38 @@ Transform:
   m_Father: {fileID: 2118538830}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &188779845
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 188779846}
+  m_Layer: 0
+  m_Name: Other
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &188779846
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188779845}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1818771308}
+  m_Father: {fileID: 1146530735}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &208188573
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,6 +232,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &440816892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 440816893}
+  m_Layer: 6
+  m_Name: FirePointPistol
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &440816893
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440816892}
+  m_LocalRotation: {x: -0, y: -0, z: -0.3624417, w: 0.9320065}
+  m_LocalPosition: {x: 0.094, y: -0.067, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 969302865}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -42.5}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -70124,7 +70187,9 @@ GameObject:
   - component: {fileID: 815465447}
   - component: {fileID: 815465446}
   - component: {fileID: 815465445}
-  m_Layer: 10
+  - component: {fileID: 815465449}
+  - component: {fileID: 815465450}
+  m_Layer: 11
   m_Name: Terrorist
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -70227,6 +70292,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &815465449
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815465443}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
+--- !u!114 &815465450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815465443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0d412d46ef22c143b4e6b0076426893, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1948148485635861951}
+  isVisible: 0
 --- !u!1 &818849353
 GameObject:
   m_ObjectHideFlags: 0
@@ -92821,6 +92921,38 @@ Transform:
   m_Father: {fileID: 815465444}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -27.65}
+--- !u!1 &1146530734
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1146530735}
+  m_Layer: 0
+  m_Name: Objects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1146530735
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146530734}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.40137067, y: 1.4880567, z: 0.08597927}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 188779846}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1161606696
 GameObject:
   m_ObjectHideFlags: 0
@@ -92874,7 +93006,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cdbae685614aee74da740380d2ea2ac6, type: 2}
+  - {fileID: 2100000, guid: f519d70fa62ec214281680d859b88166, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -122498,13 +122630,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818771305}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.746, y: 1.971, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.3446294, y: 0.4829433, z: -0.08597927}
   m_LocalScale: {x: 0.2, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 188779846}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1858234714
 GameObject:
@@ -123124,10 +123256,22 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.091
       objectReference: {fileID: 0}
+    - target: {fileID: 1948148484213702379, guid: e219f668b5775464695b3b50f4054a78, type: 3}
+      propertyPath: m_Name
+      value: FirePointRifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1948148485799546598, guid: e219f668b5775464695b3b50f4054a78, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1711302124, guid: 5188106e7ca39ed49afef63a73797422, type: 3}
     - target: {fileID: 1948148485799546600, guid: e219f668b5775464695b3b50f4054a78, type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 1948148485799546600, guid: e219f668b5775464695b3b50f4054a78, type: 3}
+      propertyPath: gun
+      value: 
+      objectReference: {fileID: 1948148485635861954}
     - target: {fileID: 1948148485799546600, guid: e219f668b5775464695b3b50f4054a78, type: 3}
       propertyPath: GunAxis
       value: 
@@ -123140,6 +123284,38 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 815465446}
+    - target: {fileID: 1948148485799546602, guid: e219f668b5775464695b3b50f4054a78, type: 3}
+      propertyPath: WarriorAxis
+      value: 
+      objectReference: {fileID: 969302865}
+    - target: {fileID: 1948148485799546602, guid: e219f668b5775464695b3b50f4054a78, type: 3}
+      propertyPath: GunAxisRifle
+      value: 
+      objectReference: {fileID: 1595153346}
+    - target: {fileID: 1948148485799546602, guid: e219f668b5775464695b3b50f4054a78, type: 3}
+      propertyPath: Rifle_Sprite
+      value: 
+      objectReference: {fileID: -1711302124, guid: 5188106e7ca39ed49afef63a73797422, type: 3}
+    - target: {fileID: 1948148485799546602, guid: e219f668b5775464695b3b50f4054a78, type: 3}
+      propertyPath: GunAxisPistol
+      value: 
+      objectReference: {fileID: 440816893}
+    - target: {fileID: 1948148485799546602, guid: e219f668b5775464695b3b50f4054a78, type: 3}
+      propertyPath: Pistol_Sprite
+      value: 
+      objectReference: {fileID: 1985933983, guid: 1570f560c59b20e488bb09d6ca14f414, type: 3}
+    - target: {fileID: 1948148485799546602, guid: e219f668b5775464695b3b50f4054a78, type: 3}
+      propertyPath: ShotGun_Sprite
+      value: 
+      objectReference: {fileID: -1213236968, guid: c3d27b599c85df34e88237ea43ac2131, type: 3}
+    - target: {fileID: 1948148485799546602, guid: e219f668b5775464695b3b50f4054a78, type: 3}
+      propertyPath: firePointRifle
+      value: 
+      objectReference: {fileID: 1595153346}
+    - target: {fileID: 1948148485799546602, guid: e219f668b5775464695b3b50f4054a78, type: 3}
+      propertyPath: firePointPistol
+      value: 
+      objectReference: {fileID: 440816893}
     - target: {fileID: 1948148485799546603, guid: e219f668b5775464695b3b50f4054a78, type: 3}
       propertyPath: m_LinearDrag
       value: 0
@@ -123147,6 +123323,10 @@ PrefabInstance:
     - target: {fileID: 1948148485799546606, guid: e219f668b5775464695b3b50f4054a78, type: 3}
       propertyPath: m_Name
       value: Warrior
+      objectReference: {fileID: 0}
+    - target: {fileID: 1948148485799546606, guid: e219f668b5775464695b3b50f4054a78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1948148485799546606, guid: e219f668b5775464695b3b50f4054a78, type: 3}
       propertyPath: m_TagString
@@ -123197,5 +123377,24 @@ PrefabInstance:
       value: 44.894
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1948148485799546607, guid: e219f668b5775464695b3b50f4054a78, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 440816893}
   m_SourcePrefab: {fileID: 100100000, guid: e219f668b5775464695b3b50f4054a78, type: 3}
+--- !u!50 &1948148485635861951 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 1948148485799546603, guid: e219f668b5775464695b3b50f4054a78, type: 3}
+  m_PrefabInstance: {fileID: 1948148485635861950}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1948148485635861954 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1948148485799546602, guid: e219f668b5775464695b3b50f4054a78, type: 3}
+  m_PrefabInstance: {fileID: 1948148485635861950}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c480167393573140bb20ecf390bac0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

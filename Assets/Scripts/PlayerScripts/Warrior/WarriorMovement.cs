@@ -5,16 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class WarriorMovement : MonoBehaviour
-{
-
-    //Разность в направлениях ствола и LookDirection персонажа
-    private float AngleDifference;
-    public float angleDifference => AngleDifference;
-
-    //Начальное направление LookDirection
-    private float StartWarriorDir;
-    //Начальное направление ствола
-    private float StartGunDir;
+{    
 
     private Vector2 LookDirection;
     public Vector2 WarriorLookDir => LookDirection;
@@ -39,12 +30,15 @@ public class WarriorMovement : MonoBehaviour
     [SerializeField]
     private Transform GunAxis;
     [SerializeField]
+    private Gun gun;
+    [SerializeField]
     private Transform WarriorAxis;
 
-    //Векторы
-    Vector2 MovementDirection;
-    Vector2 MousePosition;
 
+    //Векторы
+    private Vector2 MovementDirection;
+    private Vector2 MousePosition;
+    public Vector2 GetMousePos => MousePosition;
 
 
 
@@ -84,16 +78,6 @@ public class WarriorMovement : MonoBehaviour
 
 
 
-    private void Start()
-    {
-        StartWarriorDir = WarriorAxis.rotation.z * Mathf.Rad2Deg;
-        StartGunDir = GunAxis.rotation.z * Mathf.Rad2Deg;
-        AngleDifference = StartWarriorDir + StartGunDir;
-    }
-
-
-
-
 
     void Update()
     {
@@ -119,7 +103,7 @@ public class WarriorMovement : MonoBehaviour
         
         float Distance = Vector2.Distance(WarriorAxis.position, MousePosition);
 
-        Warrior.rotation = (Mathf.Atan2(LookDirection.y, LookDirection.x) * Mathf.Rad2Deg + AngleDifference);
+        Warrior.rotation = (Mathf.Atan2(LookDirection.y, LookDirection.x) * Mathf.Rad2Deg + gun.angleDifference);
             
 
         //Ускорение (импульс) игрока по оси Х в пределах максимальной скорости
