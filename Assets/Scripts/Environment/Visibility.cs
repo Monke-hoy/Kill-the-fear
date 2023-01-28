@@ -24,12 +24,12 @@ public class Visibility : MonoBehaviour
              Physics2D.Raycast(position - spreadOnSides, direction + spreadOnSides, (direction + spreadOnSides).magnitude, ~mask.value))
         {
             isVisible = false;
-            spriteRenderer.enabled = false;
+            //spriteRenderer.enabled = false;
         }
         else
         {
             isVisible = true;
-            spriteRenderer.enabled = true;
+            //spriteRenderer.enabled = true;
         }
     }
 }

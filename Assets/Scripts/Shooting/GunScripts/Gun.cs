@@ -41,17 +41,17 @@ public class Gun : MonoBehaviour
         }
     }
 
-    Bullet bullet;
-    GameObject bulletPrefab;
-    Transform firePoint;
-
+    //Bullet bullet;
+    //GameObject bulletPrefab;
+    //Transform firePoint;
+    //
     protected virtual void Shoot()
     {
-        if (Time.time - lastShotTime < delayBetweenShots) { return; }
-        lastShotTime = Time.time;
-        bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation).GetComponent<Bullet>();
-        bullet.damage = damage;
-        bullet.bulletSpeed = bulletSpeed;
+    //    if (Time.time - lastShotTime < delayBetweenShots) { return; }
+    //    lastShotTime = Time.time;
+    //    bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation).GetComponent<Bullet>();
+    //    bullet.damage = damage;
+    //    bullet.bulletSpeed = bulletSpeed;
     }
 
     public void ChangeGun(int numberOfGun)
