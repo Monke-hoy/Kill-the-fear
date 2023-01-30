@@ -6,10 +6,12 @@ public class EnemyGun : Gun
 { 
                      
     private EnemyBullet bullet;
+
+    [SerializeField]
+    private float damage_reducer;
         
     private GameObject enemy;
 
-                           
     private EnemyMovement correction;
 
     [SerializeField]
@@ -33,7 +35,7 @@ public class EnemyGun : Gun
         if (Time.time - lastShotTime < delayBetweenShots) { return; }
         lastShotTime = Time.time;
         bullet = Instantiate(EnemybulletPrefab, EnemyFirePoint.position, EnemyFirePoint.rotation).GetComponent<EnemyBullet>();
-        bullet.damage = damage;
+        bullet.damage = damage * damage_reducer;
         bullet.bulletSpeed = bulletSpeed;
         switch (current_gun)
         {

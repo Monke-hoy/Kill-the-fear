@@ -259,7 +259,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2
+  orthographic size: 2.7227461
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -70233,7 +70233,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 815465443}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.38, y: -1.5, z: 0}
+  m_LocalPosition: {x: 0.38, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -70325,6 +70325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1442aa74b0bb42540af66e4a6a8ba4d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage_reducer: 0.3
   EnemybulletPrefab: {fileID: 8352141041643443274, guid: 0fbd7034d86487b43bd650d89a8b6ca8, type: 3}
   EnemyFirePoint: {fileID: 1108760435}
 --- !u!114 &815465453
@@ -70339,9 +70340,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9391c77dafc076442bc1dda4b8d03a97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0.7
+  minDistToPoint: 0.09
   points:
-  - {x: 0.38, y: 0.3, z: 0}
-  - {x: 0.38, y: -1.5, z: 0}
+  - {x: 0.38, y: 1, z: 0}
+  - {x: 0.38, y: -1, z: 0}
 --- !u!50 &815465454
 Rigidbody2D:
   serializedVersion: 4
@@ -122514,7 +122517,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1519660275}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.15, y: -0.03, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -123243,7 +123246,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2001215576}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.16367921, y: 0.662872, z: -0.06250363}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

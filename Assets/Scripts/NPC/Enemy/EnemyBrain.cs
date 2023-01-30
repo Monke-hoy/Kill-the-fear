@@ -6,21 +6,21 @@ using UnityEngine.UIElements;
 public class EnemyBrain : MonoBehaviour
 {
     private enum State { patrol, shooting };
-    Visibility visibility;
-    State enemyState = State.patrol;
-    Rigidbody2D rb2d;
+    private Visibility visibility;
+    private State enemyState = State.patrol;
+    private Rigidbody2D rb2d;
 
     [SerializeField]
-    float speed = 0.001f;
+    private float speed = 0.001f;
 
     [SerializeField]
-    float minDistToPoint = 0.01f;
+    private float minDistToPoint = 0.01f;
 
     [SerializeField]
-    Vector3[] points;
+    private Vector3[] points;
 
-    int i = 0;
-    int step = 1;
+    private int i = 0;
+    private int step = 1;
 
     void Start()
     {
@@ -65,6 +65,8 @@ public class EnemyBrain : MonoBehaviour
                     Vector3 direction = points[i] - transform.position;
                     rb2d.velocity = new Vector2(direction.x, direction.y).normalized * speed;
                 }
+                Vector3 lookDirection = points[i] - transform.position;
+                transform.rotation = Quaternion.AngleAxis(Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg, Vector3.forward);
                 break;
             case State.shooting:
                 rb2d.velocity = new Vector2(0, 0);

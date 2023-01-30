@@ -22,7 +22,7 @@ public class Gun : MonoBehaviour
     //Параметры ствола
     protected float delayBetweenShots;
     protected float lastShotTime = Mathf.NegativeInfinity;
-    protected int damage;
+    protected float damage;
     protected float bulletSpeed;
     protected float pelletsDeviation = 3;
     protected float pelletsSpread = 5;
@@ -63,7 +63,7 @@ public class Gun : MonoBehaviour
                 {
                     current_gun = Guns.pistol;
                     delayBetweenShots = 0.3f;
-                    damage = 34;
+                    damage = 34f;
                     bulletSpeed = 10f;
                     shootMode = ShootMode.semiAuto;
                     lastShotTime = Mathf.NegativeInfinity;
@@ -74,7 +74,7 @@ public class Gun : MonoBehaviour
                 {
                     current_gun = Guns.shotgun;
                     delayBetweenShots = 1.0f;
-                    damage = 11;
+                    damage = 11f;
                     bulletSpeed = 10f;
                     shootMode = ShootMode.semiAuto;
                     lastShotTime = Mathf.NegativeInfinity;
@@ -85,7 +85,7 @@ public class Gun : MonoBehaviour
                 {
                     current_gun = Guns.assaultRifle;
                     delayBetweenShots = 0.1f;
-                    damage = 18;
+                    damage = 18f;
                     bulletSpeed = 10f;
                     shootMode = ShootMode.auto;
                     lastShotTime = Mathf.NegativeInfinity;
@@ -96,7 +96,7 @@ public class Gun : MonoBehaviour
                 {
                     current_gun = Guns.sniper;
                     delayBetweenShots = 1.5f;
-                    damage = 63;
+                    damage = 63f;
                     bulletSpeed = 10f;
                     shootMode = ShootMode.semiAuto;
                     lastShotTime = Mathf.NegativeInfinity;

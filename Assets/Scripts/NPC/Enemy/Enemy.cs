@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private int health = 100;
-    public int enemyHealth { get { return health; } set { health = value; } }
+    private float health = 100;
+    public float enemyHealth { get { return health; } set { health = value; } }
 
     private bool IsKillable = true;
     public bool enemyIsKillable { get { return IsKillable ; } set { IsKillable = value; } }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         health -= damage;
         if (health <= 0) { Die(); }
