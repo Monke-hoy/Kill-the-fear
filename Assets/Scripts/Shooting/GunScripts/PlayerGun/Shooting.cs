@@ -2,17 +2,17 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
-    //Ствол игрока 
+    //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ 
     [SerializeField]
     private PlayerGun playerGun;
 
     [SerializeField]
     private PlayerGunSounds playerSounds; 
 
-    //Дальномер, от положения которого измеряется дальность
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     private RangeFinder rangeFinder;
 
-    //Минимальная дистанция для стрельбы (Чтобы не простреливать коллизию)
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
     private float MinFireDist = 0.35f;
 
     void Awake()
@@ -26,7 +26,7 @@ public class Shooting : MonoBehaviour
 
     void Update()
     {
-        //Выбор ствола
+        //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         if (Input.GetKey("1"))      { playerGun.ChangeGun(1); playerSounds.ChangePlayerSound(1); }
         else if (Input.GetKey("2")) { playerGun.ChangeGun(2); playerSounds.ChangePlayerSound(2); }
         else if (Input.GetKey("3")) { playerGun.ChangeGun(3); playerSounds.ChangePlayerSound(3); }
@@ -37,7 +37,7 @@ public class Shooting : MonoBehaviour
 
         if (playerGun.GetIsTriggered())
         {
-            //Выстрел
+            //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             if ((playerGun.GetShootMode() == Gun.ShootMode.auto) & (rangeFinder.GetDistToTarget > MinFireDist)) { playerGun.PlayerShoot(); }
         }
         

@@ -6,20 +6,20 @@ using UnityEngine.U2D;
 
 public class Gun : MonoBehaviour
 {
-    //Стволы
-    protected enum Guns { pistol, shotgun, assaultRifle, sniper, none };
+    //пїЅпїЅпїЅпїЅпїЅпїЅ
+    protected enum Guns { pistol, shotgun, assaultRifle, none };
 
-    //Режимы огня
+    //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
     public enum ShootMode { auto, semiAuto, off };
 
-    //Выбранное оружие
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     protected Guns current_gun = Guns.none;
-    //Режим стрельбы 
+    //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 
     protected ShootMode shootMode = ShootMode.off;
     public ShootMode GetShootMode() => shootMode;
 
 
-    //Параметры ствола
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     protected float delayBetweenShots;
     protected float lastShotTime = Mathf.NegativeInfinity;
     protected int damage;
@@ -27,7 +27,7 @@ public class Gun : MonoBehaviour
     protected float pelletsDeviation = 3;
     protected float pelletsSpread = 5;
 
-    //Состояние курка
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     private bool isTriggerPulled = false;
     public bool GetIsTriggered() => isTriggerPulled;
 
@@ -36,7 +36,7 @@ public class Gun : MonoBehaviour
         isTriggerPulled = !isTriggerPulled;
         if (isTriggerPulled)
         {
-            //Для одииночной стрельбы
+            //пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             if ((shootMode == ShootMode.semiAuto) ) { Shoot(); }
         }
     }
@@ -88,17 +88,6 @@ public class Gun : MonoBehaviour
                     damage = 18;
                     bulletSpeed = 10f;
                     shootMode = ShootMode.auto;
-                    lastShotTime = Mathf.NegativeInfinity;
-                }
-                break;
-            case 4:
-                if (current_gun != Guns.sniper)
-                {
-                    current_gun = Guns.sniper;
-                    delayBetweenShots = 1.5f;
-                    damage = 63;
-                    bulletSpeed = 10f;
-                    shootMode = ShootMode.semiAuto;
                     lastShotTime = Mathf.NegativeInfinity;
                 }
                 break;
