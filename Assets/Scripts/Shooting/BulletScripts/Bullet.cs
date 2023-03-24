@@ -1,3 +1,4 @@
+using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
@@ -15,10 +16,11 @@ public class Bullet : MonoBehaviour
     public float bulletSpeed = 10f;
     public int damage = 10;
 
+
     public RaycastHit2D hitTheWall(Rigidbody2D rb2d, BoxCollider2D collider)
     {
         //Столкновение со стеной или другим объектом
-        return Physics2D.Raycast(rb2d.position, rb2d.transform.right, collider.size.x, LayerMask.GetMask("Bullet", "Creatures"));
+        return Physics2D.Raycast(rb2d.position, rb2d.transform.right, collider.size.x * 1.9f, LayerMask.GetMask("Bullet", "Creatures"));
     }
 
     public float DeathTime(RaycastHit2D hit)

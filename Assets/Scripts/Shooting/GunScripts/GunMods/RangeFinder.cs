@@ -5,9 +5,15 @@ using UnityEngine;
 
 public class RangeFinder : MonoBehaviour
 {
+    
+    private EnemyMovement wm = new EnemyMovement();
+
+    public RaycastHit2D GetHit => HitLookDir;
+    
     //Лазерный дальномер
     private RaycastHit2D HitLookDir;
 
+    private RaycastHit2D Hit;
 
     //Стрелок от которого от которого будет измеряться дистанция
     [SerializeField]
@@ -31,9 +37,10 @@ public class RangeFinder : MonoBehaviour
 
     void Update()
     {
-        //Луч до цели который нужен для определения дистанции до цели
+        //Луч до цели который нужен для определения дистанции до цели. Столкновение луча с объектом 
         HitLookDir = Physics2D.Raycast(ShooterAxis.position, new Vector2(fireDirection.GetFireDir.x, fireDirection.GetFireDir.y), OneHundredMeters, LayerMask.GetMask("Player", "Creatures"));
         //Дистанция до цели 
         DistToTarget = Vector2.Distance(new Vector2(ShooterAxis.position.x, ShooterAxis.position.y), HitLookDir.point);
+      
     }
 }

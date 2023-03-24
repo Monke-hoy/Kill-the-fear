@@ -41,9 +41,10 @@ public class Gun : MonoBehaviour
         }
     }
 
-    Bullet bullet;
-    GameObject bulletPrefab;
-    Transform firePoint;
+    
+    private Bullet bullet;
+    private GameObject bulletPrefab;
+    private Transform firePoint;
 
     protected virtual void Shoot()
     {
@@ -52,6 +53,7 @@ public class Gun : MonoBehaviour
         bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation).GetComponent<Bullet>();
         bullet.damage = damage;
         bullet.bulletSpeed = bulletSpeed;
+        
     }
 
     public void ChangeGun(int numberOfGun)

@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class EnemyShooting : MonoBehaviour
 {
-    public int numOfGun = 2;
+    [SerializeField]
+    private int numOfGun = 2;
 
     Visibility visibility;
     public EnemyGun enemyGun;

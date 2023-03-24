@@ -18,9 +18,16 @@ public class PlayerBullet : Bullet
     //Получаю RB2D нужной пули (игрока)
     [SerializeField]
     private Rigidbody2D PlayerBulletRB;
+
+    public Rigidbody2D GetPlayerBulletRB => PlayerBulletRB;
+
+
+
     //Получаю Collider нужной пули (игрока)
     [SerializeField]
     private BoxCollider2D PlayerBulletCollider;
+
+    public BoxCollider2D GetPlayerBulletCollider => PlayerBulletCollider;
 
     void Start()
     {
@@ -30,7 +37,7 @@ public class PlayerBullet : Bullet
         BulletSpeed(PlayerBulletRB);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         PlayerHit = hitTheWall(PlayerBulletRB, PlayerBulletCollider);
         deathTime = DeathTime(PlayerHit);
@@ -42,6 +49,7 @@ public class PlayerBullet : Bullet
             if (rangeFinder.GetDistToTarget < 0.55f)
             {
                 Destroy(gameObject, deathTime);
+                Time.timeScale = 1.0f;
             }
             else { Destroy(gameObject, deathTime); }
 
