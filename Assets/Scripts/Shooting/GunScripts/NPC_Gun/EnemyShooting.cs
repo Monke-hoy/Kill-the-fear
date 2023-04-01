@@ -2,26 +2,29 @@ using UnityEngine;
 
 public class EnemyShooting : MonoBehaviour
 {
-    [SerializeField]
-    private int numOfGun = 2;
 
+    private EnemyGun enemyGun;
+    private EnemySound enemySound;
+    private EnemyMovement enemyMovement;
     Visibility visibility;
-    public EnemyGun enemyGun;
-
 
 
     void Start()
     {
+        enemySound = GetComponent<EnemySound>();    
+        enemyGun = GetComponent<EnemyGun>();
+        enemyMovement = GetComponent<EnemyMovement>();
         visibility = GetComponent<Visibility>();
-        enemyGun.ChangeGun(numOfGun);
+        enemyGun.ChangeGun(enemyGun.GetNumOfGun);
+        enemySound.ChangeGunSound(enemyGun.GetNumOfGun);
     }
 
     void Update()
     {
         if (visibility.isVisible)
         {
-            Vector3 lookDirection = visibility.player.position - transform.position;
-            transform.rotation = Quaternion.AngleAxis(Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg, Vector3.forward);
+            Vector3 lookDirection = visibility.GetPlayerAxis.position - transform.position;
+            transform.rotation = Quaternion.AngleAxis(Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - enemyMovement.angleDifference - 2f, Vector3.forward);
             enemyGun.EnemyShoot();
         }
     }

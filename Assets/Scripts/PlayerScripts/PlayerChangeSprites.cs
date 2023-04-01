@@ -21,20 +21,21 @@ public class PlayerChangeSprites : MonoBehaviour
     //спрайт, используемый до момента приближения к стене
     private Sprite spriteBeforeWall;
     //расстояние, на котором скин будет меняться на spriteNearWall
-    float DistForSpriteNearWall = 0.35f;
+    float DistForSpriteNearWall = 0.15f;
     private RangeFinder rangeFinder;
 
 
 
     private void Start() 
     {
+
         current_sprite = GetComponent<SpriteRenderer>();
         current_sprite.sprite = spriteBeforeWall = spriteWithPistol;
-        rangeFinder = GetComponent<RangeFinder>();
+        rangeFinder = GetComponentInChildren<RangeFinder>();
         
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         //спрайт меняется, когда подходишь к стене, и возвращается, когда отходишь
         if (rangeFinder.GetDistToTarget <= DistForSpriteNearWall) 
@@ -42,15 +43,29 @@ public class PlayerChangeSprites : MonoBehaviour
             current_sprite.sprite = spriteNearWall;
         }
         else {current_sprite.sprite = spriteBeforeWall; }
+
+
         //смена спрайта от нажатия кнопки(смены оружия)
-        if (Input.GetKey("1") && current_sprite.sprite != spriteWithPistol)
+
+        if (Input.GetKey("1") && current_sprite.sprite != spriteWithPistol) 
+        { 
             current_sprite.sprite = spriteBeforeWall = spriteWithPistol;
-        if (Input.GetKey("2") && current_sprite.sprite != spriteWithShotGun)
-            current_sprite.sprite = spriteBeforeWall = spriteWithShotGun;
-        if (Input.GetKey("3") && current_sprite.sprite != spriteWithRiffle)
+
+
+        }
+
+        if (Input.GetKey("2") && current_sprite.sprite != spriteWithRiffle) 
+        { 
             current_sprite.sprite = spriteBeforeWall = spriteWithRiffle;
-        
-        
+
+        }
+
+        if (Input.GetKey("3") && current_sprite.sprite != spriteWithShotGun)
+        {
+            current_sprite.sprite = spriteBeforeWall = spriteWithShotGun;
+
+        }
+
     }
     
 

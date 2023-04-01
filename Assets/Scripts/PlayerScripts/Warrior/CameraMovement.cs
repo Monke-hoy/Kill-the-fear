@@ -4,9 +4,19 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    public Transform player;
+    private GameObject player;
+    private Camera cam;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        cam = GameObject.FindGameObjectWithTag("MainCamera")?.GetComponent<Camera>();
+    }
     void FixedUpdate()
     {
-        transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
+        if (cam != null)
+        {
+            transform.position = new Vector3(player.transform.position.x, player.transform.position.y, cam.transform.position.z);
+        }
     }
 }

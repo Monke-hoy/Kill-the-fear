@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - Wall
+  - PlayerBullet
+  - FirePoint2
+  - FirePoint
   layers:
   - Default
   - TransparentFX
@@ -19,7 +22,7 @@ TagManager:
   - Bullet
   - Enemy
   - Pause
-  - 
+  - Environment
   - 
   - 
   - 
@@ -54,4 +57,7 @@ TagManager:
     locked: 0
   - name: Creatures
     uniqueID: 1791603063
+    locked: 0
+  - name: Environment
+    uniqueID: 3260489029
     locked: 0

@@ -30,7 +30,7 @@ public class BulletLaserBeam : MonoBehaviour
 
         positions[0] = bulletTransform.position;
 
-        positions[1] = (Vector2)positions[0] + (Vector2)bulletTransform.right * bulletCollider.size.x * 1.9f;
+        positions[1] = (Vector2)positions[0] + (Vector2)bulletTransform.right * bulletCollider.size.x * 6.66f;
 
         lineRenderer.positionCount = 2;
         lineRenderer.SetPositions(positions);

@@ -28,10 +28,10 @@ public class PlayerGunSounds : MonoBehaviour
                 currentSound = PistolSound;
                 break;
             case 2:
-                currentSound = ShotgunSound;
+                currentSound = RifleSound;
                 break;
             case 3:
-                currentSound = RifleSound;
+                currentSound = ShotgunSound;
                 break;
             default:
                 currentSound = none;

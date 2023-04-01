@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerBullet : Bullet
@@ -9,8 +11,12 @@ public class PlayerBullet : Bullet
     private GameObject player;
     //Дальномер от позиции стрелка
     private RangeFinder rangeFinder;
-    //Player bullet is hit
-    private RaycastHit2D PlayerHit;
+
+    //Столкновение со стеной
+    private RaycastHit2D WallHit;
+    //Столкновение с существом
+    private RaycastHit2D EnemyHit;
+
     //Время смерти пули (игрока)
     private float deathTime;
 
@@ -29,38 +35,51 @@ public class PlayerBullet : Bullet
 
     public BoxCollider2D GetPlayerBulletCollider => PlayerBulletCollider;
 
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        rangeFinder = player.GetComponent<RangeFinder>();
+        rangeFinder = player.GetComponentInChildren<RangeFinder>();
 
         BulletSpeed(PlayerBulletRB);
     }
 
+
+    private bool hasHitWall = false;
+
+
+
     void FixedUpdate()
     {
-        PlayerHit = hitTheWall(PlayerBulletRB, PlayerBulletCollider);
-        deathTime = DeathTime(PlayerHit);
-
-        //Если столкновение со стеной или другим объектом
-        if (PlayerHit)
+        // Проверяет столкновение с врагом, только если не было столкновения со стеной
+        if (!hasHitWall)
         {
+            EnemyHit = hitTheEnemy(PlayerBulletRB, PlayerBulletCollider);
+            if (EnemyHit)
+            {
+                Enemy enemy = EnemyHit.collider.GetComponent<Enemy>();
+                if (enemy != null)
+                {
+                    enemy.TakeDamage(damage);
+                    Destroy(gameObject);
+                }
+            }
+        }
 
+        // Проверяет столкнулся ли RayCast со стеной
+
+        WallHit = hitTheWall(PlayerBulletRB, PlayerBulletCollider);
+        if (WallHit)
+        {
+            hasHitWall = true;
+            float deathTime = DeathTime(WallHit);
             if (rangeFinder.GetDistToTarget < 0.55f)
             {
                 Destroy(gameObject, deathTime);
-                Time.timeScale = 1.0f;
             }
-            else { Destroy(gameObject, deathTime); }
-
-
+            else
+                { Destroy(gameObject, deathTime); }
         }
-    }
-
-    void OnTriggerEnter2D(Collider2D collider)
-    {
-        Enemy enemy = collider.GetComponent<Enemy>();
-        if (enemy != null) { enemy.TakeDamage(damage); Destroy(gameObject, deathTime); }
     }
 
 }

@@ -6,18 +6,13 @@ using UnityEngine;
 public class RangeFinder : MonoBehaviour
 {
     
-    private EnemyMovement wm = new EnemyMovement();
 
     public RaycastHit2D GetHit => HitLookDir;
     
     //Лазерный дальномер
     private RaycastHit2D HitLookDir;
 
-    private RaycastHit2D Hit;
-
-    //Стрелок от которого от которого будет измеряться дистанция
-    [SerializeField]
-    private Transform ShooterAxis;
+    
     [SerializeField]
     private FireDirection fireDirection;
 
@@ -33,14 +28,30 @@ public class RangeFinder : MonoBehaviour
     private const byte OneHundredMeters = 100;
 
 
+    //Получаю огневую точку с необходимым компонентом transform  (currentPoint)
+    private FirePoint firePoints;
+
+    private Transform firePointTransform;
 
 
-    void Update()
+    private void Start()
     {
+        firePoints = GetComponent<FirePoint>();
+        firePointTransform = firePoints.GetCurrentTransform;
+    }
+
+
+
+    void FixedUpdate()
+    {
+        // Обновляю актуальную огневую точку 
+        firePoints.UpdateCurrentPoint(ref firePointTransform);
+
         //Луч до цели который нужен для определения дистанции до цели. Столкновение луча с объектом 
-        HitLookDir = Physics2D.Raycast(ShooterAxis.position, new Vector2(fireDirection.GetFireDir.x, fireDirection.GetFireDir.y), OneHundredMeters, LayerMask.GetMask("Player", "Creatures"));
+        HitLookDir = Physics2D.Raycast(firePointTransform.position, new Vector2(fireDirection.GetFireDir.x, fireDirection.GetFireDir.y), OneHundredMeters, LayerMask.GetMask("Player", "Environment"));
+        
         //Дистанция до цели 
-        DistToTarget = Vector2.Distance(new Vector2(ShooterAxis.position.x, ShooterAxis.position.y), HitLookDir.point);
+        DistToTarget = Vector2.Distance(new Vector2(firePointTransform.position.x, firePointTransform.position.y), HitLookDir.point);
       
     }
 }

@@ -7,7 +7,7 @@ using UnityEngine.U2D;
 public class Gun : MonoBehaviour
 {
     //Стволы
-    protected enum Guns { pistol, shotgun, assaultRifle, sniper, none };
+    protected enum Guns { pistol, shotgun, assaultRifle, none };
 
     //Режимы огня
     public enum ShootMode { auto, semiAuto, off };
@@ -25,7 +25,7 @@ public class Gun : MonoBehaviour
     protected int damage;
     protected float bulletSpeed;
     protected float pelletsDeviation = 3;
-    protected float pelletsSpread = 5;
+    protected float pelletsSpread = 1f;
 
     //Состояние курка
     private bool isTriggerPulled = false;
@@ -72,17 +72,6 @@ public class Gun : MonoBehaviour
                 }
                 break;
             case 2:
-                if (current_gun != Guns.shotgun)
-                {
-                    current_gun = Guns.shotgun;
-                    delayBetweenShots = 1.0f;
-                    damage = 11;
-                    bulletSpeed = 10f;
-                    shootMode = ShootMode.semiAuto;
-                    lastShotTime = Mathf.NegativeInfinity;
-                }
-                break;
-            case 3:
                 if (current_gun != Guns.assaultRifle)
                 {
                     current_gun = Guns.assaultRifle;
@@ -93,12 +82,12 @@ public class Gun : MonoBehaviour
                     lastShotTime = Mathf.NegativeInfinity;
                 }
                 break;
-            case 4:
-                if (current_gun != Guns.sniper)
+            case 3:
+                if (current_gun != Guns.shotgun)
                 {
-                    current_gun = Guns.sniper;
-                    delayBetweenShots = 1.5f;
-                    damage = 63;
+                    current_gun = Guns.shotgun;
+                    delayBetweenShots = 1.0f;
+                    damage = 11;
                     bulletSpeed = 10f;
                     shootMode = ShootMode.semiAuto;
                     lastShotTime = Mathf.NegativeInfinity;
