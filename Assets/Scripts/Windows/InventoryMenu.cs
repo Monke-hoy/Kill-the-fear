@@ -5,7 +5,9 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
 
 public class InventoryMenu : MonoBehaviour
+
 {
+
     [SerializeField] private GameObject inventoryWindow;
 
     public GameObject GetInventoryWindow => inventoryWindow;
@@ -47,7 +49,8 @@ public class InventoryMenu : MonoBehaviour
 
     public void Inventory()
     {
-        Debug.Log("Вызов инвентаря");
+        
+        
         InventoryWindowIsNotActive = !InventoryWindowIsNotActive;
         if (InventoryWindowIsNotActive)
         {
@@ -72,7 +75,6 @@ public class InventoryMenu : MonoBehaviour
     {
         InventoryWindowIsNotActive = true;
 
-        Debug.Log("Я закрыл инвентарь на Escape");
 
         gameManagerScript.UnfreezePlayer();
         CursorManager.Instance.SetScopeCursor();

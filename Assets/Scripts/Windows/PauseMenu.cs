@@ -42,22 +42,21 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
-        Debug.Log("Вызов паузы");
         pauseWindowIsNotActive = !pauseWindowIsNotActive;
         if (pauseWindowIsNotActive)
             Resume();
         else
         {
-            // Замораживаю игрока
+            // Г‡Г Г¬Г®Г°Г Г¦ГЁГўГ Гѕ ГЁГЈГ°Г®ГЄГ 
             gameManagerScript.FreezePlayer();
             CursorManager.Instance.SetMenuCursor();
             pauseMenu.SetActive(true);
 
             
-            // Выключаю ввод инвентарю
+            // Г‚Г»ГЄГ«ГѕГ·Г Гѕ ГўГўГ®Г¤ ГЁГ­ГўГҐГ­ГІГ Г°Гѕ
             inventoryMenu.pauseWindowIsActive = true;
 
-            // Сохраняем текущую позицию курсора
+            // Г‘Г®ГµГ°Г Г­ГїГҐГ¬ ГІГҐГЄГіГ№ГіГѕ ГЇГ®Г§ГЁГ¶ГЁГѕ ГЄГіГ°Г±Г®Г°Г 
             beforeOpeningPosition = Input.mousePosition;
 
             Time.timeScale = 0f;
@@ -69,16 +68,16 @@ public class PauseMenu : MonoBehaviour
     {
         pauseWindowIsNotActive = true;
 
-        // Размораживаю игрока
+        // ГђГ Г§Г¬Г®Г°Г Г¦ГЁГўГ Гѕ ГЁГЈГ°Г®ГЄГ 
         gameManagerScript.UnfreezePlayer();
         CursorManager.Instance.SetScopeCursor();
         pauseMenu.SetActive(false);
 
-        // Включаю ввод инвентарю
+        // Г‚ГЄГ«ГѕГ·Г Гѕ ГўГўГ®Г¤ ГЁГ­ГўГҐГ­ГІГ Г°Гѕ
         inventoryMenu.pauseWindowIsActive = false;
 
 
-        // Устанавливаю курсор
+        // Г“Г±ГІГ Г­Г ГўГ«ГЁГўГ Гѕ ГЄГіГ°Г±Г®Г°
         Mouse.current.WarpCursorPosition(beforeOpeningPosition);
 
         InputState.Change(Mouse.current.position, beforeOpeningPosition);
@@ -89,10 +88,10 @@ public class PauseMenu : MonoBehaviour
     public void Home(int sceneID)
     {
         Time.timeScale = 1f;
-        //Устанавливаю курсор
+        //Г“Г±ГІГ Г­Г ГўГ«ГЁГўГ Гѕ ГЄГіГ°Г±Г®Г°
         CursorManager.Instance.SetMenuCursor();
         
-        //Уничтожаю то что не уничтожается при переходе, в меню оно не нужно
+        //Г“Г­ГЁГ·ГІГ®Г¦Г Гѕ ГІГ® Г·ГІГ® Г­ГҐ ГіГ­ГЁГ·ГІГ®Г¦Г ГҐГІГ±Гї ГЇГ°ГЁ ГЇГҐГ°ГҐГµГ®Г¤ГҐ, Гў Г¬ГҐГ­Гѕ Г®Г­Г® Г­ГҐ Г­ГіГ¦Г­Г®
         PlayerManager.Instance.DestroyPlayer();
         CameraManager.Instance.DestroyCamera();
         CanvasManager.Instance.DestroyCanvas();
@@ -113,15 +112,22 @@ public class PauseMenu : MonoBehaviour
 
     private void Update()
     {
-        // Если персонаж умер - тогда окно паузы нельзя вызвать
+        // Г…Г±Г«ГЁ ГЇГҐГ°Г±Г®Г­Г Г¦ ГіГ¬ГҐГ° - ГІГ®ГЈГ¤Г  Г®ГЄГ­Г® ГЇГ ГіГ§Г» Г­ГҐГ«ГјГ§Гї ГўГ»Г§ГўГ ГІГј
         if (DeathWindowIsActive || InventoryWindowIsActive)
             return;
 
+
         
-        // Вызов паузы на клавишу escape
+        // Г‚Г»Г§Г®Гў ГЇГ ГіГ§Г» Г­Г  ГЄГ«Г ГўГЁГёГі escape
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             
+
+
+        // Г‚Г»Г§Г®Гў ГЇГ ГіГ§Г» Г­Г  ГЄГ«Г ГўГЁГёГі escape
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+
             Pause();
         }
         

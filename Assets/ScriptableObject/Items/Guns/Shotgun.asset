@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a9bc4db860a7034a810c2e608b0b1c5, type: 3}
+  m_Name: Shotgun
+  m_EditorClassIdentifier: 
+  ItemName: Shotgun
+  InventoryIcon: {fileID: 21300000, guid: 54842f3722de04a43acdbd00b39fdc07, type: 3}
+  OnFloorIcon: {fileID: 21300000, guid: fc9d4bd23902b0e44a1a42a9d06a0de9, type: 3}
+  itemType: 1
+  scriptableGameObject: {fileID: 3817218404033357394, guid: bdbeed09b4d9d5949a05cbe14352cd66, type: 3}

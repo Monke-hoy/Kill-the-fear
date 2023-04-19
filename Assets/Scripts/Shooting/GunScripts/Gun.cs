@@ -7,7 +7,7 @@ using UnityEngine.U2D;
 public class Gun : MonoBehaviour
 {
     //Стволы
-    protected enum Guns { pistol, shotgun, assaultRifle, none };
+    public enum Guns { pistol, shotgun, assaultRifle, none };
 
     //Режимы огня
     public enum ShootMode { auto, semiAuto, off };
