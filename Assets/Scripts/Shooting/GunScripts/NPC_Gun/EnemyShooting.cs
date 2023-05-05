@@ -1,4 +1,6 @@
 using UnityEngine;
+using System;
+using static UnityEngine.GraphicsBuffer;
 
 public class EnemyShooting : MonoBehaviour
 {
@@ -20,12 +22,18 @@ public class EnemyShooting : MonoBehaviour
 
     void Update()
     {
-        if (visibility.isVisible)
-        {
+        if (visibility.isVisible && visibility.Timer > 0.2f)
+        {   
 
             Vector3 lookDirection = visibility.GetPlayerAxis.position - transform.position;
-            transform.rotation = Quaternion.AngleAxis(Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - enemyMovement.angleDifference - 2f, Vector3.forward);
-            enemyGun.EnemyShoot();
+            
+            Quaternion lookRotation = Quaternion.AngleAxis(Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - enemyMovement.angleDifference - 2f, Vector3.forward);
+            if (Quaternion.Angle(lookRotation, transform.rotation) < 12f)
+            {
+                enemyGun.EnemyShoot();
+                transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * 12f);
+            }
+            transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * 6f);
         }
     }
 }
