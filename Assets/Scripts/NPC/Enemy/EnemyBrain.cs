@@ -11,7 +11,7 @@ public class EnemyBrain : MonoBehaviour
     Rigidbody2D rb2d;
 
     [SerializeField]
-    float speed = 0.001f;
+    float movespeed;
 
     [SerializeField]
     float minDistToPoint = 0.01f;
@@ -19,6 +19,8 @@ public class EnemyBrain : MonoBehaviour
     [SerializeField]
     Vector3[] points;
 
+
+    private EnemyMovement enemyMovement;
     int i = 0;
     int step = 1;
 
@@ -26,10 +28,11 @@ public class EnemyBrain : MonoBehaviour
     {
         visibility = GetComponent<Visibility>();
         rb2d = GetComponent<Rigidbody2D>();
+        enemyMovement = GetComponent<EnemyMovement>();
         if ((transform.position - points[0]).magnitude >= minDistToPoint)
         {
             Vector3 direction = points[0] - transform.position;
-            rb2d.velocity = new Vector2(direction.x, direction.y).normalized * speed;
+            rb2d.velocity = new Vector2(direction.x, direction.y).normalized * movespeed;
         }
     }
 
@@ -57,14 +60,11 @@ public class EnemyBrain : MonoBehaviour
                     {
                         step = -step;
                     }
-                    Vector3 direction = points[i] - transform.position;
-                    rb2d.velocity = new Vector2(direction.x, direction.y).normalized * speed;
                 }
-                else
-                {
-                    Vector3 direction = points[i] - transform.position;
-                    rb2d.velocity = new Vector2(direction.x, direction.y).normalized * speed;
-                }
+                Vector3 direction = points[i] - transform.position;
+                Quaternion lookRotation = Quaternion.AngleAxis(Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - enemyMovement.angleDifference - 2f, Vector3.forward);
+                rb2d.velocity = new Vector2(direction.x, direction.y).normalized * movespeed;
+                transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * 18f);
                 break;
             case State.shooting:
                 rb2d.velocity = new Vector2(0, 0);
