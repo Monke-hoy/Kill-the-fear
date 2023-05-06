@@ -13,6 +13,9 @@ public class Enemy : MonoBehaviour
     private int health = 100;
     public int enemyHealth { get { return health; } set { health = value; } }
 
+    public Sprite DeadEnemySprite;
+    public bool IsDead = false;
+
     public void TakeDamage(int damage)
     {
         health -= damage;
@@ -22,6 +25,9 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         EnemyManager.Instance.AddToDeadList(Id, SceneId);
-        Destroy(gameObject);
+        GetComponent<Visibility>().spriteRenderer.sprite = DeadEnemySprite;
+        IsDead = true;
+        GetComponent<CircleCollider2D>().enabled = false;
+        this.transform.Rotate(0, 0, 60f);
     }
 }
