@@ -2,44 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Pistol", menuName = "ScriptableObject/Items/Pistol", order = 1)]
-public class gun_pistol : Item 
+[CreateAssetMenu(fileName = "Pistol", menuName = "ScriptableObject/Items/Guns/Pistol", order = 1)]
+public class gun_pistol : root_item_gun
 {
-    private Gun gunClass;
 
-    private Gun.Guns gunType;
+    [SerializeField] private Sprite unloaded_pistol_inventory_icon;
 
-    private Gun.ShootMode shootMode;
-
-    private float delayBetweenShots;
-
-    private int damage;
-
-    private float bulletSpeed;
-
-    private float lastShotTime = Mathf.NegativeInfinity;
+    public Sprite GetUnloadedInventoryIcon => unloaded_pistol_inventory_icon;
 
 
 
 
-    public Gun.Guns GetGunType => gunType;
-
-    public Gun.ShootMode GetShootMode => shootMode;
-
-    public float GetDelayBetweenShots => delayBetweenShots;
-
-    public int GetDamage => damage;
-
-    public float GetBulletSpeed => bulletSpeed;
-
-    public float GetLastShotTime => lastShotTime;
-
-
-
-
-    private void Start()
+    private void OnEnable()
     {
-        gunClass = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerGun>();
 
         gunType = Gun.Guns.pistol;
 
@@ -51,5 +26,17 @@ public class gun_pistol : Item
 
         bulletSpeed = 10f;
 
+        itemType = ItemType.gun;
+
+        spriteIndex = 1;
+
+        soundIndex = 1;
+
+        firePointIndex = 1;
+
+        AD_index = 1;
+
+        // Две секунды
+        reload_time = 2;
     }
 }

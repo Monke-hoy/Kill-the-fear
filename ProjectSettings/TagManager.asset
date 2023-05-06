@@ -9,6 +9,11 @@ TagManager:
   - PlayerBullet
   - FirePoint2
   - FirePoint
+  - GunSlot
+  - Indicator
+  - Item
+  - ItemSlot
+  - EdgedWeaponSlot
   layers:
   - Default
   - TransparentFX
@@ -60,4 +65,7 @@ TagManager:
     locked: 0
   - name: Environment
     uniqueID: 3260489029
+    locked: 0
+  - name: Text
+    uniqueID: 2828545897
     locked: 0

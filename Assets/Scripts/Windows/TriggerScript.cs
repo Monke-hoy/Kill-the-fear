@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,10 @@ public class TriggerScript : MonoBehaviour
     // Имя сцены на которую будем переходить
     [SerializeField] private string sceneName;
 
+    private InventoryManager inventoryManager;
+
+    private InventoryMenu inventoryMenu;
+
     public string GetSceneName => sceneName;
 
     // Запоминет позицию вхождения в триггер-коллайдер 
@@ -15,16 +20,33 @@ public class TriggerScript : MonoBehaviour
 
     private CanvasTransition canvasTransition;
 
+    private GameObject faceUI;
+
+    private const float switch_on_time = 1.2f;
+
+    private static bool hasGameStarted = false;
+
+
     private void Start()
     {
         canvasTransition = GameObject.Find("LevelChanger").GetComponent<CanvasTransition>();
 
+        inventoryManager = GameObject.Find("Main Camera").GetComponent<InventoryManager>();
+
+        inventoryMenu = GameObject.Find("Main Camera").GetComponent<InventoryMenu>();
+
+        faceUI = inventoryManager.getFaceUI;
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            inventoryMenu.Set_blocking_status = true;
+
+            faceUI.SetActive(false);
+
             canvasTransition.SceneName = this.sceneName;
 
             playerPosition = collision.transform.position;
@@ -36,4 +58,9 @@ public class TriggerScript : MonoBehaviour
 
         }
     }
+
+    private void GetFaceUI() => faceUI = GameObject.Find("FaceUI");
+
+
+    
 }

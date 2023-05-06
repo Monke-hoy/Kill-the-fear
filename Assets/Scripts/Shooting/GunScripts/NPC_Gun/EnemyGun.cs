@@ -45,13 +45,19 @@ public class EnemyGun : Gun
 
     protected override void Shoot()
     {
-        
+
         if (Time.time - lastShotTime < delayBetweenShots) { return; }
+
         lastShotTime = Time.time;
+
         GetComponent<AudioSource>().PlayOneShot(enemySound.GetCurrentSound);
+        
         bullet = Instantiate(EnemybulletPrefab, EnemyFirePoint.position, EnemyFirePoint.rotation).GetComponent<EnemyBullet>();
+        
         bullet.damage = damage;
+        
         bullet.bulletSpeed = bulletSpeed;
+        
         switch (current_gun)
         {
             case Guns.shotgun:
@@ -70,4 +76,53 @@ public class EnemyGun : Gun
                 break;
         }
     }
+
+
+
+
+
+
+
+
+    public override void ChangeGun(int numberOfGun)
+    {
+        switch (numberOfGun)
+        {
+            case 1:
+                if (current_gun != Guns.pistol)
+                {
+                    current_gun = Guns.pistol;
+                    delayBetweenShots = 0.3f;
+                    damage = 34;
+                    bulletSpeed = 10f;
+                    shootMode = ShootMode.semiAuto;
+                    lastShotTime = Mathf.NegativeInfinity;
+                }
+                break;
+            case 2:
+                if (current_gun != Guns.assaultRifle)
+                {
+                    current_gun = Guns.assaultRifle;
+                    delayBetweenShots = 0.1f;
+                    damage = 18;
+                    bulletSpeed = 10f;
+                    shootMode = ShootMode.auto;
+                    lastShotTime = Mathf.NegativeInfinity;
+                }
+                break;
+            case 3:
+                if (current_gun != Guns.shotgun)
+                {
+                    current_gun = Guns.shotgun;
+                    delayBetweenShots = 1.0f;
+                    damage = 11;
+                    bulletSpeed = 10f;
+                    shootMode = ShootMode.semiAuto;
+                    lastShotTime = Mathf.NegativeInfinity;
+                }
+                break;
+        }
+    }
+
+
 }

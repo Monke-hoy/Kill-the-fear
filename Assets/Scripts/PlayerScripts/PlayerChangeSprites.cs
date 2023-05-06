@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerChangeSprites : MonoBehaviour
 {
 
-    private enum Sprites { withPistol, withShotGun, withRifle, none }
+    private enum Sprites { withPistol, withShotGun, withRifle, withHummer , none }
 
     private Sprites CurrentSprite = Sprites.none;
 
@@ -26,7 +26,7 @@ public class PlayerChangeSprites : MonoBehaviour
 
 
         //спрайт меняется, когда подходишь к стене, и возвращается, когда отходишь
-        if (rangeFinder.GetDistToTarget <= DistForSpriteNearWall) 
+        if (rangeFinder.GetDistToTarget <= DistForSpriteNearWall && current_sprite.sprite != spriteWithHammer) 
         {
             current_sprite.sprite = spriteNearWall;
         }
@@ -43,6 +43,8 @@ public class PlayerChangeSprites : MonoBehaviour
     private Sprite spriteWithRiffle;
     [SerializeField]
     private Sprite spriteNearWall;
+    [SerializeField]
+    private Sprite spriteWithHammer;
 
     //спрайт, используемый до момента приближения к стене
     private Sprite spriteBeforeWall = null;
@@ -71,6 +73,12 @@ public class PlayerChangeSprites : MonoBehaviour
                 if (CurrentSprite != Sprites.withShotGun)
                 {
                     current_sprite.sprite = spriteBeforeWall = spriteWithShotGun;
+                }
+                break;
+            case 0:
+                if (CurrentSprite != Sprites.withHummer)
+                {
+                    current_sprite.sprite = spriteBeforeWall = spriteWithHammer;
                 }
                 break;
 

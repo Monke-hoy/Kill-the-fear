@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: Shotgun
   m_EditorClassIdentifier: 
   ItemName: Shotgun
-  icon: {fileID: 0}
+  InventoryIcon: {fileID: 21300000, guid: 54842f3722de04a43acdbd00b39fdc07, type: 3}
+  OnFloorIcon: {fileID: 21300000, guid: fc9d4bd23902b0e44a1a42a9d06a0de9, type: 3}
+  itemType: 2
+  scriptableGameObject: {fileID: 3817218404033357394, guid: bdbeed09b4d9d5949a05cbe14352cd66, type: 3}

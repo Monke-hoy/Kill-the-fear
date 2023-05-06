@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: Pistol
   m_EditorClassIdentifier: 
   ItemName: Pistol
-  icon: {fileID: 0}
+  InventoryIcon: {fileID: 21300000, guid: ccf8cb7b5d80ccf45be9522e7b0297de, type: 3}
+  OnFloorIcon: {fileID: 21300000, guid: c508697bdaf92a846bfbc3a1347cddb8, type: 3}
+  itemType: 2
+  scriptableGameObject: {fileID: 4940101878841674655, guid: 6abe3ee22ec9e274ab72229d0775b528, type: 3}
+  unloaded_pistol_inventory_icon: {fileID: 21300000, guid: 4824a211cb68f1547a9fb0716a6443f5, type: 3}

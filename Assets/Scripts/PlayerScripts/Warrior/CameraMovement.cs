@@ -17,7 +17,7 @@ public class CameraMovement : MonoBehaviour
         shooting = player.GetComponent<Shooting>();
         shooting.enabled = true;
     }
-    void FixedUpdate()
+    void LateUpdate()
     {
         if (cam != null)
         {

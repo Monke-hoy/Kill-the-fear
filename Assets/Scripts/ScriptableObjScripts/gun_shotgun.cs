@@ -2,44 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Shotgun", menuName = "ScriptableObject/Items/Shotgun", order = 3)]
-public class gun_shotgun : Item
+[CreateAssetMenu(fileName = "Shotgun", menuName = "ScriptableObject/Items/Guns/Shotgun", order = 3)]
+public class gun_shotgun : root_item_gun
 {
-    private Gun gunClass;
 
-    private Gun.Guns gunType;
+    private int Capasity = 8;
 
-    private Gun.ShootMode shootMode;
+    private float BulletLoadTime = 0.25f;
 
-    private float delayBetweenShots;
-
-    private int damage;
-
-    private float bulletSpeed;
-
-    private float lastShotTime = Mathf.NegativeInfinity;
+    private float BulletGrabTime = 1f;
 
 
 
+    public int GetCapasity => Capasity;
 
-    public Gun.Guns GetGunType => gunType;
+    public float GetBulletLoadTime => BulletLoadTime;
 
-    public Gun.ShootMode GetShootMode => shootMode;
-
-    public float GetDelayBetweenShots => delayBetweenShots;
-
-    public int GetDamage => damage;
-
-    public float GetBulletSpeed => bulletSpeed;
-
-    public float GetLastShotTime => lastShotTime;
+    public float GetBulletGrabTime => BulletGrabTime;
 
 
 
 
-    private void Start()
+
+
+
+
+
+    private void OnEnable()
     {
-        gunClass = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerGun>();
 
         gunType = Gun.Guns.shotgun;
 
@@ -50,6 +40,19 @@ public class gun_shotgun : Item
         damage = 11;
 
         bulletSpeed = 10f;
+
+        itemType = ItemType.gun;
+
+        spriteIndex = 3;
+
+        soundIndex = 3;
+
+        firePointIndex = 3;
+
+        AD_index = 3;
+
+        // Время перезарядки для одного патрона
+        reload_time = 0.7f;
 
     }
 }

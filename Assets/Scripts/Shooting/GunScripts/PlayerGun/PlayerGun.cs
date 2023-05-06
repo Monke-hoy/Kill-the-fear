@@ -38,15 +38,31 @@ public class PlayerGun : Gun
     public void PlayerShoot() => Shoot();
 
 
+
+
+
+
     protected override void Shoot()
     {
-        if ((Time.time - lastShotTime < delayBetweenShots) || (rangeFinder.GetDistToTarget <= MinFireDist) ) { return; }
+
+        if ((Time.time - lastShotTime < delayBetweenShots) || (rangeFinder.GetDistToTarget <= MinFireDist) || (current_capacity.get_current_bullet_count <= 0)) { return; }
+
+
         lastShotTime = Time.time;
 
         //ќбновл€ю позицию CurrentPoint 
         firePoints.UpdateCurrentPoint(ref firePointTransform);
 
-        bullet = Instantiate(bulletPrefab, firePointTransform.position, firePointTransform.rotation).GetComponent<PlayerBullet>();
+        //bullet = Instantiate(bulletPrefab, firePointTransform.position, firePointTransform.rotation).GetComponent<PlayerBullet>();
+        
+        GameObject bullet_obj = current_capacity.TakeBullet();
+        bullet_obj.transform.position = firePointTransform.position;
+        bullet_obj.transform.rotation = firePointTransform.rotation;
+        bullet_obj.SetActive(true);
+
+        bullet = bullet_obj.GetComponent<PlayerBullet>();
+
+
         playerSounds.PlaySound();
         bullet.damage = damage;
         bullet.bulletSpeed = bulletSpeed;
@@ -72,6 +88,34 @@ public class PlayerGun : Gun
 
 
 
+
+
+
+
+    private Collider2D hammer_range_collider;
+
+    private float last_kick_time;
+
+    public void Kick()
+    {
+        if (Time.time - last_kick_time < root_weapon.GetCooldown) { return; }
+            last_kick_time = Time.time;
+            hammer_range_collider.enabled = true;
+            Invoke("TurnOffCollider", 0.1f);
+        
+    }
+
+    private void TurnOffCollider() => hammer_range_collider.enabled = false;
+
+
+
+
+
+
+
+
+
+
     void Start()
     {
         firePoints = GetComponent<FirePoint>();
@@ -81,5 +125,8 @@ public class PlayerGun : Gun
         correction = GetComponent<WarriorMovement>();
         player = GameObject.FindGameObjectWithTag("Player");
         bullet = player.GetComponent<PlayerBullet>();
+
+        hammer_range_collider = GameObject.Find("Warrior").transform.GetChild(0).gameObject.GetComponent<Collider2D>();
+
     }
 }
