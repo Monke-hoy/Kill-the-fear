@@ -23,8 +23,8 @@ TagManager:
   - Enemy
   - Pause
   - Environment
-  - 
-  - 
+  - Mask
+  - BehindMask
   - 
   - 
   - 
@@ -60,4 +60,7 @@ TagManager:
     locked: 0
   - name: Environment
     uniqueID: 3260489029
+    locked: 0
+  - name: FieldOfView
+    uniqueID: 132672715
     locked: 0
