@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7f374e79aaccd7448d5688e0d4f33be, type: 3}
+  m_Name: PistolMag
+  m_EditorClassIdentifier: 
+  ItemName: PistolMag
+  InventoryIcon: {fileID: 21300000, guid: 8c6c0eeb3c79be14f91a4595422ccc7d, type: 3}
+  OnFloorIcon: {fileID: 21300000, guid: b2446e693ecd05b42955c9bb3707e7e8, type: 3}
+  itemType: 3
+  scriptableGameObject: {fileID: 7843541055941969067, guid: 830a18e28e42b6943854bcf47ad1ce64, type: 3}

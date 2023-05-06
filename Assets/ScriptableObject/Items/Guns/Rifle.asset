@@ -13,4 +13,9 @@ MonoBehaviour:
   m_Name: Rifle
   m_EditorClassIdentifier: 
   ItemName: Rifle
-  icon: {fileID: 0}
+  InventoryIcon: {fileID: 21300000, guid: a31e91cc7e8b27d46a2a204f7cd5f508, type: 3}
+  OnFloorIcon: {fileID: 21300000, guid: d4d58bbf5f2eff540891cc38c886ce14, type: 3}
+  itemType: 2
+  scriptableGameObject: {fileID: 4498226770193358667, guid: d1db9b899d0a7d243ba0f92ace023bb1, type: 3}
+  unloaded_rifle_icon: {fileID: 21300000, guid: 54eea97090ce98d47bca5fd53054cc40, type: 3}
+  unloaded_rifle_inventory_icon: {fileID: 21300000, guid: f5db415106ba1c64a83d39554d075ab4, type: 3}

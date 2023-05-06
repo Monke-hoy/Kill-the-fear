@@ -76,7 +76,7 @@ Transform:
   m_Children:
   - {fileID: 6012711759975465564}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5614941254540156989
 MonoBehaviour:
@@ -545,6 +545,7 @@ MonoBehaviour:
   spriteWithShotGun: {fileID: 21300000, guid: 6f821183d79d483419de5523138509db, type: 3}
   spriteWithRiffle: {fileID: 21300000, guid: 1570f560c59b20e488bb09d6ca14f414, type: 3}
   spriteNearWall: {fileID: 21300000, guid: 5294b4b4689fa6d43a30ce3776ca5156, type: 3}
+  spriteWithHammer: {fileID: 21300000, guid: 2d1086b08f788984c97c5c6e89e9840c, type: 3}
 --- !u!1 &6012711760487723608 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1948148484213702379, guid: e219f668b5775464695b3b50f4054a78, type: 3}
@@ -563,6 +564,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
+--- !u!60 &841981647
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6012711760487723608}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.22696742, y: -0.08621438}
+      - {x: 0.26785392, y: 0.025168095}
+      - {x: 0.26306432, y: 0.16997975}
+      - {x: 0.05413374, y: 0.075920895}
+      - {x: 0.06340009, y: 0.025850616}
+      - {x: 0.03231882, y: -0.0036829775}
+      - {x: 0.15813158, y: -0.2013975}
+  m_UseDelaunayMesh: 0
+--- !u!114 &841981648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6012711760487723608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202f5e9088278c4e9a63f7698a1136a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6012711760487723611 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1948148484213702376, guid: e219f668b5775464695b3b50f4054a78, type: 3}
