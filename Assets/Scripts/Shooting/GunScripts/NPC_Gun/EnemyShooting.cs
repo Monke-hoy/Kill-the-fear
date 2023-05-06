@@ -20,7 +20,7 @@ public class EnemyShooting : MonoBehaviour
 
     void Update()
     {
-        if (visibility.isVisible)
+        if (visibility.isVisible && !GetComponent<Enemy>().IsDead)
         {
 
             Vector3 lookDirection = visibility.GetPlayerAxis.position - transform.position;

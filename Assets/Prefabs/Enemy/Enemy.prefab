@@ -30,7 +30,7 @@ Transform:
   m_Children:
   - {fileID: 5023115185561825560}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5023115185335117198
 GameObject:
@@ -118,6 +118,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 1
   SceneId: 3
+  DeadEnemySprite: {fileID: 21300000, guid: c7256288514331c468bd348add93e503, type: 3}
+  IsDead: 0
 --- !u!58 &5023115185561825561
 CircleCollider2D:
   m_ObjectHideFlags: 0
