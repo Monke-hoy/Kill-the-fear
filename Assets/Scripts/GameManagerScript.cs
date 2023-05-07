@@ -191,6 +191,9 @@ public class GameManagerScript : MonoBehaviour
         // Убираю все лишние предметы
         EnemyManager.Instance.DestroyAllItemsOnGround();
 
+        // Убираю трупы
+        EnemyManager.Instance.DestroyAllCorpses();
+
         //Включаю затемнение
         transition.StartDeathTransition();
 
