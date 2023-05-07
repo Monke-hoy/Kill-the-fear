@@ -18,7 +18,7 @@ public class Visibility : MonoBehaviour
         Vector2 playerPosition = new Vector2(player.position.x, player.position.y);
         Vector2 direction = playerPosition - position;
         //Vector2 spreadOnSides = new Vector2(direction.y, -direction.x).normalized * circleCollider.radius;
-        LayerMask mask = LayerMask.GetMask("Enemy", "Player", "Bullet");
+        LayerMask mask = LayerMask.GetMask("Enemy", "Player", "Bullet", "Blocking");
         if (Physics2D.Raycast(position, direction, direction.magnitude, ~mask.value) && /*
              Physics2D.Raycast(position + spreadOnSides, direction - spreadOnSides, (direction - spreadOnSides).magnitude, ~mask.value) &&
              Physics2D.Raycast(position - spreadOnSides, direction + spreadOnSides, (direction + spreadOnSides).magnitude, ~mask.value) && */
