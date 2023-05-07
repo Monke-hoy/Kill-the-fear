@@ -12,7 +12,6 @@ public class CameraMovement : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         cam = GameObject.FindGameObjectWithTag("MainCamera")?.GetComponent<Camera>();
-
         // В билде почему-то этот скрипт отключается в начале, поэтому я его включу
         shooting = player.GetComponent<Shooting>();
         shooting.enabled = true;
@@ -21,7 +20,15 @@ public class CameraMovement : MonoBehaviour
     {
         if (cam != null)
         {
-            transform.position = new Vector3(player.transform.position.x, player.transform.position.y, cam.transform.position.z);
+            if (Input.GetButtonDown("Fire2"))
+            {
+                Vector3 MousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
+                cam.transform.position = new Vector3(MousePosition.x, MousePosition.y, cam.transform.position.z);
+            }
+            else if(!Input.GetButton("Fire2"))
+            {
+                cam.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, cam.transform.position.z);
+            }
         }
     }
 }

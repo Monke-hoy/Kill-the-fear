@@ -797,6 +797,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6012711759975465567, guid: 3a1cffbd353bbba449a5e416b3b9f652, type: 3}
+      propertyPath: hpUI
+      value: 
+      objectReference: {fileID: 1894838079}
     - target: {fileID: 6012711760293777064, guid: 3a1cffbd353bbba449a5e416b3b9f652, type: 3}
       propertyPath: m_Name
       value: Player
@@ -74981,6 +74985,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1958406445, guid: c0d6f479503ec254da527b47e0e37930, type: 3}
   m_PrefabInstance: {fileID: 1894838075}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1894838079 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 579404447, guid: c0d6f479503ec254da527b47e0e37930, type: 3}
+  m_PrefabInstance: {fileID: 1894838075}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95f74e442e7f5a345a2ec5e06eb279e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1997926905
 GameObject:
   m_ObjectHideFlags: 0

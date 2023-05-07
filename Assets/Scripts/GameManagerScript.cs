@@ -201,6 +201,7 @@ public class GameManagerScript : MonoBehaviour
 
         //Возвращаю HP игрока в дефолтное состояния, на данный момент оно в минусе
         playerParams.playerHealth = playerParams.GetDefaultHP;
+        playerParams.hpUI.SetHealth(playerParams.GetDefaultHP);
         playerParams.playerIsDead = false;
 
         UnfreezePlayer();
