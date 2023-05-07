@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public PlayerHpUI hpUI;
+
     private GameManagerScript gameManager;
 
 
@@ -33,6 +35,8 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        if (health >= 0) { hpUI.SetHealth(health); }
+        else { hpUI.SetHealth(0); }
         if (health <= 0 && !isDead) 
         {
             isDead = true;

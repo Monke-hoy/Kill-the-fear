@@ -80,6 +80,8 @@ GameObject:
   - component: {fileID: 5023115185561825552}
   - component: {fileID: 5023115185561825553}
   - component: {fileID: 5023115185561825554}
+  - component: {fileID: 3700933019372830476}
+  - component: {fileID: 650427216468573905}
   m_Layer: 10
   m_Name: Terrorist
   m_TagString: Enemy
@@ -95,7 +97,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5023115185561825567}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.579, y: 0.442, z: 0.06250363}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -148,6 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f1d53711c144f44e98fafffcc69b939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ReactionTimer: 0
   isVisible: 0
   spriteRenderer: {fileID: 5023115185920615601}
 --- !u!114 &5023115185561825558
@@ -302,6 +305,42 @@ MonoBehaviour:
   PistolSound: {fileID: 8300000, guid: cf9188439ecd4194ea11e07abecc1c32, type: 3}
   ShotGunSound: {fileID: 8300000, guid: a79d253df6733774ba7c568ec452d519, type: 3}
   RifleSound: {fileID: 8300000, guid: 2e17d8bd1a9ad4847bab55374d18982b, type: 3}
+--- !u!114 &3700933019372830476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5023115185561825567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7164dc7b5824d8642bfd0c740324dd7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movespeed: 0.6
+  minDistToPoint: 0.01
+  points: []
+--- !u!50 &650427216468573905
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5023115185561825567}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &5023115185920615607
 GameObject:
   m_ObjectHideFlags: 0
