@@ -184,6 +184,7 @@ public class WarriorMovement : MonoBehaviour
         //Позиция курсора
         MousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
 
+
         //Замедлить или ускорить перса на shift или control
         if (Input.GetKey(KeyCode.LeftShift)) MaxSpeed = 1;
         else if (Input.GetKey(KeyCode.LeftControl)) MaxSpeed = 0.5f;
