@@ -30,14 +30,6 @@ public class EnemyBrain : MonoBehaviour
         visibility = GetComponent<Visibility>();
         rb2d = GetComponent<Rigidbody2D>();
         enemyMovement = GetComponent<EnemyMovement>();
-        if (points.Length > 0)
-        {
-            if ((transform.position - points[0]).magnitude >= minDistToPoint)
-            {
-                Vector3 direction = points[0] - transform.position;
-                rb2d.velocity = new Vector2(direction.x, direction.y).normalized * movespeed;
-            }
-        }
     }
 
     void Update()
@@ -56,8 +48,7 @@ public class EnemyBrain : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (points.Length < 2)
-            return;
+        if (points.Length < 2) { return; }
         switch (enemyState)
         {
             case State.patrol:
