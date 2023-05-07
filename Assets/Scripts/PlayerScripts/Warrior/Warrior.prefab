@@ -90,7 +90,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -150,8 +150,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ec2f33d1c627f74ca608a1c1bd099eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fieldofView: {fileID: 0}
   Warrior: {fileID: 1948148485799546603}
-  cam: {fileID: 0}
+  WarriorAxis: {fileID: 0}
 --- !u!50 &1948148485799546603
 Rigidbody2D:
   serializedVersion: 4
@@ -185,10 +186,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c480167393573140bb20ecf390bac0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 1948148484213702376}
-  bulletPrefab: {fileID: 2563289282412000716, guid: c5a96d8f67e60dc428f7f57f31f37f13, type: 3}
-  pelletsDeviation: 3
-  pelletsSpread: 5
 --- !u!114 &1948148485799546605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,7 +198,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cf188c2cc5b7e8479450c6e68620e37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gun: {fileID: 1948148485799546602}
+  playerGun: {fileID: 0}
+  playerSounds: {fileID: 0}
 --- !u!114 &1948148485799546604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,4 +212,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99b134647feba7b4b9c953fb38f95700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelfCollider: {fileID: 1948148485799546601}

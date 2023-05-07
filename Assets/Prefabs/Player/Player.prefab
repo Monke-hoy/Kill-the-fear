@@ -363,7 +363,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -551,19 +551,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1948148484213702379, guid: e219f668b5775464695b3b50f4054a78, type: 3}
   m_PrefabInstance: {fileID: 5222002678563523763}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6012711760425171662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6012711760487723608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb1c59ffaa4ca8c47af3fc8353718a9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: 1
 --- !u!60 &841981647
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -609,6 +596,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0202f5e9088278c4e9a63f7698a1136a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6012711760425171662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6012711760487723608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb1c59ffaa4ca8c47af3fc8353718a9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 1
 --- !u!4 &6012711760487723611 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1948148484213702376, guid: e219f668b5775464695b3b50f4054a78, type: 3}

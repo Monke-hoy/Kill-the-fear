@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class WarriorMovement : MonoBehaviour
 {
-    [SerializeField] private FieldofView fieldofView;
 
     //Начальное направление LookDirection
     private float StartWarriorDir;
@@ -185,8 +184,6 @@ public class WarriorMovement : MonoBehaviour
         //Позиция курсора
         MousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
 
-        fieldofView.SetAimDirection(LookDirection);
-        fieldofView.SetOrigin(transform.position);
 
         //Замедлить или ускорить перса на shift или control
         if (Input.GetKey(KeyCode.LeftShift)) MaxSpeed = 1;
