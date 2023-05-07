@@ -131895,7 +131895,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 7
-      m_TileSpriteIndex: 13
+      m_TileSpriteIndex: 25
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -131915,7 +131915,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 11
-      m_TileSpriteIndex: 2
+      m_TileSpriteIndex: 13
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -132556,8 +132556,8 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 3ef1e4c2720f60f409c5688367f62b6c, type: 3}
   - m_RefCount: 8
     m_Data: {fileID: 21300000, guid: 4b7c97c36d29c6140b5743f4463cb4c6, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: a9a530f42e4488140914e9455de6c5e3, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 11
     m_Data: {fileID: 21300000, guid: d961a727667f2624081bb32b12e95339, type: 3}
   - m_RefCount: 3
@@ -132579,7 +132579,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: d959a20394a5ac14baccf224e0aec697, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: 260efd0b5a2416742a1750ac728e2447, type: 3}
+    m_Data: {fileID: 21300000, guid: a9a530f42e4488140914e9455de6c5e3, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 21300000, guid: 8dbabd83f331fb146b6c30e34c76ddcc, type: 3}
   - m_RefCount: 4
@@ -132602,8 +132602,8 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: a754444255925344da3adc5028732b32, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: f13a7eb508763f046bb7553955ff198d, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: 260efd0b5a2416742a1750ac728e2447, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: eaa8c6f221cabeb4b9abcfe63b04b199, type: 3}
   - m_RefCount: 3
@@ -136632,13 +136632,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1830646704628665715}
     - target: {fileID: 4947536787062875348, guid: 8a38f4e72e014664fb30b686814b3479, type: 3}
-      propertyPath: "fa\u0441\u0435UI"
-      value: 
-      objectReference: {fileID: 1830646704628665715}
-    - target: {fileID: 4947536787062875348, guid: 8a38f4e72e014664fb30b686814b3479, type: 3}
       propertyPath: onFadeScreen
       value: 
       objectReference: {fileID: 1830646704628665714}
+    - target: {fileID: 4947536787062875348, guid: 8a38f4e72e014664fb30b686814b3479, type: 3}
+      propertyPath: rifleReloadSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6fc42edeb38f4ad47b262c5dbc5ac35f, type: 3}
+    - target: {fileID: 4947536787062875348, guid: 8a38f4e72e014664fb30b686814b3479, type: 3}
+      propertyPath: pistolReloadSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ce9bf5e1c0a074646881c96e13cd1733, type: 3}
+    - target: {fileID: 4947536787062875348, guid: 8a38f4e72e014664fb30b686814b3479, type: 3}
+      propertyPath: shotGunSlugLoadSound
+      value: 
+      objectReference: {fileID: 8300000, guid: de700c6897094ed49a753b69ab23c7d9, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a38f4e72e014664fb30b686814b3479, type: 3}
