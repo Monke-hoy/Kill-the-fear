@@ -22,7 +22,7 @@ public class gun_pistol : root_item_gun
 
         delayBetweenShots = 0.3f;
 
-        damage = 34;
+        damage = 50;
 
         bulletSpeed = 10f;
 
@@ -37,6 +37,6 @@ public class gun_pistol : root_item_gun
         AD_index = 1;
 
         // Две секунды
-        reload_time = 2;
+        reload_time = 1.8f;
     }
 }
