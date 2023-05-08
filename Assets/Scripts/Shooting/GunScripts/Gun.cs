@@ -8,20 +8,20 @@ using UnityEngine.U2D;
 
 public class Gun : MonoBehaviour
 {
-    //Стволы
+    //пїЅпїЅпїЅпїЅпїЅпїЅ
     public enum Guns { pistol, shotgun, assaultRifle, hammer, none };
 
-    //Режимы огня
+    //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
     public enum ShootMode { auto, semiAuto, off };
 
-    //Выбранное оружие
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     protected Guns current_gun = Guns.none;
-    //Режим стрельбы 
+    //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 
     protected ShootMode shootMode = ShootMode.off;
     public ShootMode GetShootMode() => shootMode;
 
 
-    //Параметры ствола
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     protected float delayBetweenShots;
     protected float lastShotTime = Mathf.NegativeInfinity;
     protected int damage;
@@ -29,7 +29,7 @@ public class Gun : MonoBehaviour
     protected float pelletsDeviation = 1;
     protected float pelletsSpread = 0.5f;
 
-    //Состояние курка
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     private bool isTriggerPulled = false;
     public bool TriggerIsPulled
     {
@@ -41,14 +41,14 @@ public class Gun : MonoBehaviour
 
 
 
-    // Массив слотов инвентаря (под оружие)
+    // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ)
     private AmmunitionGunSlot[] gun_slots = new AmmunitionGunSlot[3];
 
     private SecondArmSlot[] secondArmSlots = new SecondArmSlot[2];
 
     private PlayerGunSounds playerSounds;
 
-    private PlayerChangeSprites changingSprites;
+    private NewPlayerCS changingSprites;
 
     private FirePoint firePoints;
 
@@ -71,7 +71,7 @@ public class Gun : MonoBehaviour
 
 
 
-        changingSprites = GetComponent<PlayerChangeSprites>();
+        changingSprites = GetComponent<NewPlayerCS>();
 
         playerSounds = GetComponent<PlayerGunSounds>();
 
@@ -95,7 +95,7 @@ public class Gun : MonoBehaviour
         isTriggerPulled = !isTriggerPulled;
         if (isTriggerPulled)
         {
-            //Для одииночной стрельбы
+            //пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             if ((shootMode == ShootMode.semiAuto) ) { Shoot(); }
             if (current_gun == Guns.hammer) { playerGun.Kick(); }
         }
@@ -142,10 +142,10 @@ public class Gun : MonoBehaviour
 
 
 
-    // Емкость оружия
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     protected bullets_capacity current_capacity;
 
-    // Оружие
+    // пїЅпїЅпїЅпїЅпїЅпїЅ
     protected GameObject gunObject;
 
     private Shooting shootingScript;
@@ -192,7 +192,7 @@ public class Gun : MonoBehaviour
 
         if (gun_slots[index].object_in_slot != null)
         {
-            // Получаю информацию об оружии в этом слоте
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
             root_item_gun gun_data = gun_slots[index].object_in_slot.GetComponent<FloorItem>().getItem as root_item_gun;
 
             isTriggerPulled = false;
@@ -205,7 +205,7 @@ public class Gun : MonoBehaviour
             current_reload_time = gun_data.GetReloadTime;
             current_slot = index + 1;
 
-            // Получаю оружие и магазин от него
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ
             gunObject = gun_slots[index].object_in_slot;
             shootingScript.set_root_gun = gunObject.GetComponent<FloorItem>().getItem as root_item_gun;
 
@@ -240,7 +240,7 @@ public class Gun : MonoBehaviour
 
     private void UpdateHummer()
     {
-        // Получаю информацию об оружии в этом слоте
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         root_item_gun gun_data = secondArmSlots[0].object_in_slot.GetComponent<FloorItem>().getItem as root_item_gun;
 
         isTriggerPulled = false;
@@ -252,7 +252,7 @@ public class Gun : MonoBehaviour
         lastShotTime = gun_data.GetLastShotTime;
         current_slot = 0;
 
-        // Получаю оружие и магазин от него
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ
         gunObject = secondArmSlots[0].object_in_slot;
         root_weapon = gunObject.GetComponent<FloorItem>().getItem as root_item_gun;
         shootingScript.set_root_gun = root_weapon;
@@ -291,7 +291,7 @@ public class Gun : MonoBehaviour
             case 0:
                 if (secondArmSlots[0] != null)
                 {
-                    // Кувалда
+                    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                     if (secondArmSlots[0].object_in_slot != null)
                     {
                         UpdateHummer();
