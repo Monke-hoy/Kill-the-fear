@@ -169,7 +169,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemSlots: []
-  "fa\u0441\u0435UI": {fileID: 0}
+  faceUI: {fileID: 0}
   onFadeScreen: {fileID: 0}
+  pistolReloadSound: {fileID: 8300000, guid: ce9bf5e1c0a074646881c96e13cd1733, type: 3}
+  rifleReloadSound: {fileID: 8300000, guid: 6fc42edeb38f4ad47b262c5dbc5ac35f, type: 3}
+  shotGunSlugLoadSound: {fileID: 8300000, guid: de700c6897094ed49a753b69ab23c7d9, type: 3}
   debug_slots: []
   block_reload: 0

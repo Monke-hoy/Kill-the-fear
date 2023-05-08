@@ -39,8 +39,14 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private GameObject onFadeScreen;
 
 
-    
 
+    [SerializeField] private AudioClip pistolReloadSound;
+
+    [SerializeField] private AudioClip rifleReloadSound;
+
+    [SerializeField] private AudioClip shotGunSlugLoadSound;
+
+    private AudioSource playerAudioSourse;
 
 
 
@@ -96,6 +102,9 @@ public class InventoryManager : MonoBehaviour
         onFadeScreen.SetActive(true);
 
         Invoke("TurnOffFadeScreen", 0.1f);
+
+        // Получаю источник звука игрока
+        playerAudioSourse = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>();
 
     }
 
@@ -194,7 +203,7 @@ public class InventoryManager : MonoBehaviour
 
                 if (mag_slots != null && gun_in_slot != null)
                 {
-                    StartCoroutine(ReloadGun(current_gun_slot, mag_slots, reload_time));
+                    StartCoroutine(ReloadGun(current_gun_slot, mag_slots, reload_time, gun_type));
                 }
 
             }
@@ -275,14 +284,13 @@ public class InventoryManager : MonoBehaviour
 
 
 
-    IEnumerator ReloadGun(GameObject gun_slot, List<Slot> mag_slots, float reload_time)
+    IEnumerator ReloadGun(GameObject gun_slot, List<Slot> mag_slots, float reload_time, Guns gunType)
     {
         is_reloading = true;
 
         shooting.set_reload_status = true;
 
         inventoryMenu.set_reloading_status = true;
-
         
         yield return new WaitForSeconds(reload_time);
 
@@ -295,6 +303,11 @@ public class InventoryManager : MonoBehaviour
             inventoryMenu.set_reloading_status = false;
             yield break;
         }
+
+        if (gunType == Guns.pistol)
+            playerAudioSourse.PlayOneShot(pistolReloadSound);
+        else
+            playerAudioSourse.PlayOneShot(rifleReloadSound);
 
         bool flag = false;
         
@@ -408,6 +421,8 @@ public class InventoryManager : MonoBehaviour
 
             // Задержка перед зарядкой одного патрона
             yield return new WaitForSeconds(load_time);
+
+            playerAudioSourse.PlayOneShot(shotGunSlugLoadSound);
             
             bool bullet_was_loaded = false;
             

@@ -191,6 +191,9 @@ public class GameManagerScript : MonoBehaviour
         // Убираю все лишние предметы
         EnemyManager.Instance.DestroyAllItemsOnGround();
 
+        // Убираю трупы
+        EnemyManager.Instance.DestroyAllCorpses();
+
         //Включаю затемнение
         transition.StartDeathTransition();
 
@@ -201,6 +204,7 @@ public class GameManagerScript : MonoBehaviour
 
         //Возвращаю HP игрока в дефолтное состояния, на данный момент оно в минусе
         playerParams.playerHealth = playerParams.GetDefaultHP;
+        playerParams.hpUI.SetHealth(playerParams.GetDefaultHP);
         playerParams.playerIsDead = false;
 
         UnfreezePlayer();

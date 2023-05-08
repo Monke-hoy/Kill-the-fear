@@ -11,7 +11,7 @@ public class EnemyBrain : MonoBehaviour
     Rigidbody2D rb2d;
 
     [SerializeField]
-    float speed = 0.001f;
+    float movespeed;
 
     [SerializeField]
     float minDistToPoint = 0.01f;
@@ -19,6 +19,9 @@ public class EnemyBrain : MonoBehaviour
     [SerializeField]
     Vector3[] points;
 
+    private float standTimer;
+
+    private EnemyMovement enemyMovement;
     int i = 0;
     int step = 1;
 
@@ -26,11 +29,7 @@ public class EnemyBrain : MonoBehaviour
     {
         visibility = GetComponent<Visibility>();
         rb2d = GetComponent<Rigidbody2D>();
-        if ((transform.position - points[0]).magnitude >= minDistToPoint)
-        {
-            Vector3 direction = points[0] - transform.position;
-            rb2d.velocity = new Vector2(direction.x, direction.y).normalized * speed;
-        }
+        enemyMovement = GetComponent<EnemyMovement>();
     }
 
     void Update()
@@ -41,29 +40,32 @@ public class EnemyBrain : MonoBehaviour
         }
         else
         {
+            if (enemyState == State.shooting) { standTimer = 0f; }
+            else { standTimer += Time.deltaTime; }
             enemyState = State.patrol;
         }
     }
 
     void FixedUpdate()
     {
+        if (points.Length < 2) { return; }
         switch (enemyState)
         {
             case State.patrol:
-                if ((transform.position - points[i]).magnitude < minDistToPoint)
+                if (standTimer > 2f)
                 {
-                    i += step;
-                    if ((i == points.Length - 1) || (i == 0))
+                    if ((transform.position - points[i]).magnitude < minDistToPoint)
                     {
-                        step = -step;
+                        i += step;
+                        if ((i == points.Length - 1) || (i == 0))
+                        {
+                            step = -step;
+                        }
                     }
                     Vector3 direction = points[i] - transform.position;
-                    rb2d.velocity = new Vector2(direction.x, direction.y).normalized * speed;
-                }
-                else
-                {
-                    Vector3 direction = points[i] - transform.position;
-                    rb2d.velocity = new Vector2(direction.x, direction.y).normalized * speed;
+                    Quaternion lookRotation = Quaternion.AngleAxis(Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - enemyMovement.angleDifference - 2f, Vector3.forward);
+                    rb2d.velocity = new Vector2(direction.x, direction.y).normalized * movespeed;
+                    transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * 18f);
                 }
                 break;
             case State.shooting:
