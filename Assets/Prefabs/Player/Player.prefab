@@ -470,9 +470,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b47b116d2a4f9f4286604f7389cc1c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PistolSound: {fileID: 8300000, guid: cf9188439ecd4194ea11e07abecc1c32, type: 3}
-  RifleSound: {fileID: 8300000, guid: 2e17d8bd1a9ad4847bab55374d18982b, type: 3}
-  ShotgunSound: {fileID: 8300000, guid: 92747abed79fa964cb3f311ed194193c, type: 3}
+  PistolSound: {fileID: 8300000, guid: 2203773368e4340d98c114f55c2dd7fd, type: 3}
+  RifleSound: {fileID: 8300000, guid: 2396c7d1e385cc04b874585218ac783a, type: 3}
+  ShotgunSound: {fileID: 8300000, guid: a79d253df6733774ba7c568ec452d519, type: 3}
   none: {fileID: 8300000, guid: 79c276ac6dbe330459d9cc3f33eb9f15, type: 3}
 --- !u!114 &6012711759975465583
 MonoBehaviour:
@@ -536,7 +536,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6012711759975465565}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f23552409e3ca840b1cedc3418de124, type: 3}
   m_Name: 
@@ -546,24 +546,31 @@ MonoBehaviour:
   spriteWithRiffle: {fileID: 21300000, guid: 1570f560c59b20e488bb09d6ca14f414, type: 3}
   spriteNearWall: {fileID: 21300000, guid: 5294b4b4689fa6d43a30ce3776ca5156, type: 3}
   spriteWithHammer: {fileID: 21300000, guid: 2d1086b08f788984c97c5c6e89e9840c, type: 3}
+--- !u!95 &1645123301
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6012711759975465565}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7161d403f6064c74fb4ecfb1e99f51ee, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6012711760487723608 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1948148484213702379, guid: e219f668b5775464695b3b50f4054a78, type: 3}
   m_PrefabInstance: {fileID: 5222002678563523763}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6012711760425171662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6012711760487723608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb1c59ffaa4ca8c47af3fc8353718a9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: 1
 --- !u!60 &841981647
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -609,6 +616,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0202f5e9088278c4e9a63f7698a1136a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6012711760425171662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6012711760487723608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb1c59ffaa4ca8c47af3fc8353718a9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 1
 --- !u!4 &6012711760487723611 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1948148484213702376, guid: e219f668b5775464695b3b50f4054a78, type: 3}

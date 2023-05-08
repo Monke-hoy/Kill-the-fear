@@ -22709,6 +22709,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5023115185561825552, guid: 27fa1cb00b8fb4a4eaf0b9959bbd8bf6, type: 3}
+      propertyPath: numOfGun
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5023115185561825560, guid: 27fa1cb00b8fb4a4eaf0b9959bbd8bf6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.25
@@ -23070,6 +23074,10 @@ PrefabInstance:
     - target: {fileID: 5023115184924220943, guid: 27fa1cb00b8fb4a4eaf0b9959bbd8bf6, type: 3}
       propertyPath: m_Name
       value: Enemy (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5023115185561825552, guid: 27fa1cb00b8fb4a4eaf0b9959bbd8bf6, type: 3}
+      propertyPath: numOfGun
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5023115185561825560, guid: 27fa1cb00b8fb4a4eaf0b9959bbd8bf6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -68477,7 +68485,9 @@ GameObject:
   - component: {fileID: 1363589555}
   - component: {fileID: 1363589557}
   - component: {fileID: 1363589556}
-  m_Layer: 7
+  - component: {fileID: 1363589558}
+  - component: {fileID: 1363589559}
+  m_Layer: 12
   m_Name: OnTable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68822,6 +68832,87 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!60 &1363589558
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363589554}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.35126963, y: -1.2138226}
+      - {x: -0.20196709, y: -1.212202}
+      - {x: -0.17357764, y: -1.1949519}
+      - {x: -0.1730795, y: -1.0675805}
+      - {x: -0.19593395, y: -1.0473639}
+      - {x: -0.35189784, y: -1.0512226}
+      - {x: -0.35040164, y: -0.9889931}
+      - {x: -0.18879367, y: -0.9886689}
+      - {x: -0.18828017, y: -0.66068494}
+      - {x: -0.3760678, y: -0.6602902}
+      - {x: -0.37141892, y: -0.58452815}
+      - {x: -0.683691, y: -0.5821835}
+      - {x: -0.6811488, y: -0.42949224}
+      - {x: -0.6992506, y: -0.4026227}
+      - {x: -0.8260345, y: -0.4037728}
+      - {x: -0.84059083, y: -0.43502846}
+      - {x: -0.83083946, y: -0.59040105}
+      - {x: -1.0258121, y: -0.59263414}
+      - {x: -1.031942, y: -0.99494004}
+      - {x: -0.96353614, y: -0.99063706}
+      - {x: -0.9691628, y: -1.3282214}
+      - {x: -0.35533682, y: -1.3118882}
+  m_UseDelaunayMesh: 0
+--- !u!60 &1363589559
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363589554}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1.8704826, y: 4.6494493}
+      - {x: -1.9941804, y: 4.6647935}
+      - {x: -2.0172384, y: 4.6423}
+      - {x: -2.015993, y: 4.519287}
+      - {x: -1.99139, y: 4.4955525}
+      - {x: -1.8841274, y: 4.5045085}
+      - {x: -1.8746578, y: 4.5140357}
+  m_UseDelaunayMesh: 0
 --- !u!1 &1438051614
 GameObject:
   m_ObjectHideFlags: 0
@@ -68923,6 +69014,10 @@ PrefabInstance:
     - target: {fileID: 5023115184924220943, guid: 27fa1cb00b8fb4a4eaf0b9959bbd8bf6, type: 3}
       propertyPath: m_Name
       value: Enemy (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5023115185561825552, guid: 27fa1cb00b8fb4a4eaf0b9959bbd8bf6, type: 3}
+      propertyPath: numOfGun
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5023115185561825560, guid: 27fa1cb00b8fb4a4eaf0b9959bbd8bf6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -76746,6 +76841,10 @@ PrefabInstance:
     - target: {fileID: 5023115184924220943, guid: 27fa1cb00b8fb4a4eaf0b9959bbd8bf6, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5023115185561825552, guid: 27fa1cb00b8fb4a4eaf0b9959bbd8bf6, type: 3}
+      propertyPath: numOfGun
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5023115185561825560, guid: 27fa1cb00b8fb4a4eaf0b9959bbd8bf6, type: 3}
       propertyPath: m_LocalPosition.x

@@ -25,7 +25,7 @@ public class Bullet : MonoBehaviour
 
     public RaycastHit2D hitTheEnemy(Rigidbody2D rb2d, BoxCollider2D collider)
     {
-        //Столкновение со стеной или другим объектом
+        //Столкновение с врагом
         return Physics2D.Raycast(rb2d.position, rb2d.transform.right, collider.size.x * 3.33f, LayerMask.GetMask("Enemy"));
     }
 

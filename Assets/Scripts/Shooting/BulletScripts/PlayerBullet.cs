@@ -78,7 +78,7 @@ public class PlayerBullet : Bullet
                 Destroy(gameObject, deathTime);
             }
             else
-                { Destroy(gameObject, deathTime); }
+            { Destroy(gameObject, deathTime); }
         }
     }
 
